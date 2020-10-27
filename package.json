@@ -7,7 +7,7 @@
 		"dev:together": "NODE_ENV=development webpack --config ./configs/webpack.react.config.js --mode development && webpack --config ./configs/webpack.electron.config.js --mode development && electron .",
 		"dev:react": "NODE_ENV=development webpack --watch --config ./configs/webpack.react.config.js --mode development",
 		"dev:electron": "NODE_ENV=development webpack --config ./configs/webpack.electron.config.js --mode development && electron .",
-		"build:mac": "electron-builder --mac --publish always && electron-builder --win --publish always",
+		"build:mac": "electron-builder --mac --publish always",
 		"build:win": "electron-builder --win --publish always"
 	},
 	"devDependencies": {
