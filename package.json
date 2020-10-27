@@ -1,0 +1,98 @@
+{
+	"name": "boilerplate-ert",
+	"version": "1.0.0",
+	"license": "MIT",
+	"main": "./dist/js/electron.js",
+	"scripts": {
+		"dev:together": "NODE_ENV=development webpack --config ./configs/webpack.react.config.js --mode development && webpack --config ./configs/webpack.electron.config.js --mode development && electron .",
+		"dev:react": "NODE_ENV=development webpack --watch --config ./configs/webpack.react.config.js --mode development",
+		"dev:electron": "NODE_ENV=development webpack --config ./configs/webpack.electron.config.js --mode development && electron .",
+		"build:mac": "electron-builder --mac --publish always && electron-builder --win --publish always",
+		"build:win": "electron-builder --win --publish always"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.9.0",
+		"@babel/preset-env": "^7.9.5",
+		"@babel/preset-react": "^7.9.4",
+		"@babel/preset-typescript": "^7.9.0",
+		"@types/react-redux": "^7.1.9",
+		"@types/redux-actions": "^2.6.1",
+		"babel-loader": "^8.1.0",
+		"css-loader": "^5.0.0",
+		"electron": "^8.2.2",
+		"electron-builder": "^22.9.1",
+		"html-webpack-plugin": "^4.2.0",
+		"node-sass": "^4.14.1",
+		"sass-loader": "^10.0.4",
+		"style-loader": "^2.0.0",
+		"webpack": "^5.3.0",
+		"webpack-cli": "^3.3.11"
+	},
+	"build": {
+		"productName": "appname",
+		"artifactName": "${name}-${version}-${arch}.${ext}",
+		"appId": "com.example.appname",
+		"asar": true,
+		"protocols": {
+			"name": "appname",
+			"schemes": [
+				"appname"
+			]
+		},
+		"publish": {
+			"provider": "s3",
+			"bucket": "whatever-bucket"
+		},
+		"mac": {
+			"target": [
+				"default"
+			]
+		},
+		"dmg": {
+			"title": "appname"
+		},
+		"win": {
+			"target": [
+				{
+					"target": "nsis",
+					"arch": [
+						"ia32",
+						"x64"
+					]
+				}
+			]
+		},
+		"linux": {
+			"target": [
+				"AppImage",
+				"deb",
+				"rpm",
+				"zip",
+				"tar.gz"
+			]
+		},
+		"nsis": {
+			"oneClick": false,
+			"allowToChangeInstallationDirectory": false,
+			"installerLanguages": [
+				"en_US",
+				"ko_KR"
+			],
+			"language": "1042"
+		},
+		"directories": {
+			"buildResources": "resources/installer/",
+			"output": "build/",
+			"app": "."
+		}
+	},
+	"dependencies": {
+		"@types/react": "^16.9.53",
+		"@types/react-dom": "^16.9.8",
+		"immutable": "^4.0.0-rc.12",
+		"react": "^17.0.1",
+		"react-dom": "^17.0.1",
+		"react-redux": "^7.2.2",
+		"redux-actions": "^2.6.5"
+	}
+}

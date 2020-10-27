@@ -1,0 +1,17 @@
+@import "./_variables";
+
+*{
+    margin:0px;
+    padding:0px;
+    background-color:$color-main-background;
+}
+h1 {
+  color: $font-color-main;
+  text-align: center;
+  margin-top:$maingTop;
+}
+.desc{
+    color: $font-color-main;
+    text-align: center;    
+    margin-top:20px;
+}
