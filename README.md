@@ -2,7 +2,7 @@
 
 ## Electron / React / Typescript Boilerplate for beginner ( I'm beginner )
 
-### It's Include
+### Include
 - Electron
 - React
 - Typescript
